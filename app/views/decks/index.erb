@@ -1,0 +1,6 @@
+<h2>DECKS</h2>
+<ul>
+  <% @decks.each do |deck| %>
+    <a href="/decks/<%= deck.id %>"><li><%= deck.name %></li></a>
+  <% end %>
+</ul>

@@ -3,4 +3,8 @@ get '/decks' do
   erb :'decks/index'
 end
 
+get '/decks/:id' do
+  @deck = params[:id]
+  erb :'decks/show'
+end
 
