@@ -15,6 +15,7 @@ get '/users/:id' do
       decks_played[round.id] = []
       decks_played[round.id] << round
     end
+  end
 
   erb :"/users/show", locals: { decks_played: decks_played }
 end
