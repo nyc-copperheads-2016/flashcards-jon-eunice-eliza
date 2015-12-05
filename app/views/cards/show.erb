@@ -1,0 +1,9 @@
+<div class="container">
+  <h2>Question:</h2>
+    <h3><%= @card.prompt %></h3>
+  <h4>Write your answer here:</h4>
+    <form method="post" action="/guesses"/>
+      <input type="text" name="answer"/>
+      <input type="submit" value="Guess"/>
+    </form>
+</div>
