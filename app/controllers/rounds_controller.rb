@@ -5,7 +5,7 @@ GET '/rounds/:id' do
   erb :'rounds/show'
 end
 
-get '/deck/:id/rounds/' do
+get '/deck/:id/rounds/new' do
   @deck = Deck.find_by(id: params[:id])
   @round = Round.create(deck_id: @deck.id, user_id: current_user.id, first_guesses: 0, total_guesses: 0)
   num_of_cards = @deck.cards.length
