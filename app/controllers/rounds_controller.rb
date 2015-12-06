@@ -14,5 +14,5 @@ get '/decks/:id/rounds/new' do
     Guess.create(card_id: card.id, round_id: @round.id, user_id: 1)
   end
   # erb :'/cards/show' # Eunice's change?
-  redirect "/cards/first"
+  redirect "/rounds/#{@round.id}/cards/first"
 end

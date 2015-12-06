@@ -1,6 +1,6 @@
 <div class= "container">
   <h2>Question:</h2>
-  <h3><%= @unsolved_cards.first.prompt %></h3>
+  <h3><%= @card.prompt %></h3>
   <form method="post" action="/guesses"/>
     <label> Write your answer here:</label>
     <input type="text" name="answer"/>

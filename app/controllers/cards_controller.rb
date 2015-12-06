@@ -10,7 +10,8 @@
 #   redirect "/rounds/#{params[:round_id]}"
 # end
 
-get '/cards/first'
-
+get '/rounds/:id/cards/first' do
+  remaining_cards = Guess.where(["solved = ? and round_id = ?", "false", "#{params[:id]}"]).order(:id)
+  @card = remaining_cards.first.card
   erb :'cards/show'
 end
