@@ -18,25 +18,47 @@
 
   <title></title>
 </head>
-<body>
-  <div class="wrapper">
+  <body>
+
+    <div class="wrapper">
     <header class="masthead">
       <nav class="masthead--nav">
         <ul class="masthead--ul">
+
+          <% if logged_in? %>
+            <li class="masthead--li">
+              <span class='welcome'>Welcome, <%= current_user.username %>!</span>
+              <form method='post' action='/sessions'>
+                <input type='hidden' name='_method' value='DELETE' />
+                <input id='logout' type='submit' value='Logout' />
+              </form>
+            </li>
+          <% else %>
+            <li class="masthead--li">
+              <a href="/users/new">New User</a>
+            </li>
+            <li class="masthead--li">
+              <a href="/sessions/new">Log in</a>
+            </li>
+          <% end %>
           <li class="masthead--li">
-            <a href="">Register</a>
-          </li>
-          <li class="masthead--li">
-            <a href="">Log in</a>
-          </li>
-          <li class="masthead--li">
-            <a href="">Home</a>
+            <a href="/">Home</a>
           </li>
         </ul>
       </nav>
       <h1 class="masthead--logo">Flashdown!</h1>
       <p class="masthead--tagline">A flashcard web app</p>
     </header>
+
+    <% if defined?(errors) %>
+      <div class='errors'>
+        <ul>
+          <% errors.each do |error| %>
+            <li><%= error %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
     <div class="content">
       <%= yield %>
@@ -47,5 +69,5 @@
       <p><a href="http://devbootcamp.com/" target="_blank">Dev Bootcamp NYC</a> &bull; Copperheads 2016</p>
     </footer>
   </div>
-</body>
+  </body>
 </html>
