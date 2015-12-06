@@ -11,6 +11,7 @@
     application.css is where you put your styles
   -->
   <link rel="stylesheet" href="/css/application.css">
+  <link href='https://fonts.googleapis.com/css?family=Bangers|Open+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
@@ -18,16 +19,36 @@
   <title></title>
 </head>
   <body>
-    <% if logged_in? %>
-      <span class='welcome'>Welcome, <%= current_user.username %>!</span>
-      <form method='post' action='/sessions'>
-        <input type='hidden' name='_method' value='DELETE' />
-        <input id='logout' type='submit' value='Logout' />
-      </form>
-    <% else %>
-      <a href='/users/new'>New User</a>
-      <a href="/sessions/new">Login</a>
-    <% end %>
+
+    <div class="wrapper">
+    <header class="masthead">
+      <nav class="masthead--nav">
+        <ul class="masthead--ul">
+
+          <% if logged_in? %>
+            <li class="masthead--li">
+              <span class='welcome'>Welcome, <%= current_user.username %>!</span>
+              <form method='post' action='/sessions'>
+                <input type='hidden' name='_method' value='DELETE' />
+                <input id='logout' type='submit' value='Logout' />
+              </form>
+            </li>
+          <% else %>
+            <li class="masthead--li">
+              <a href="/users/new">New User</a>
+            </li>
+            <li class="masthead--li">
+              <a href="/sessions/new">Log in</a>
+            </li>
+          <% end %>
+          <li class="masthead--li">
+            <a href="/">Home</a>
+          </li>
+        </ul>
+      </nav>
+      <h1 class="masthead--logo">Flashdown!</h1>
+      <p class="masthead--tagline">A flashcard web app</p>
+    </header>
 
     <% if defined?(errors) %>
       <div class='errors'>
@@ -39,6 +60,14 @@
       </div>
     <% end %>
 
-    <%= yield %>
+    <div class="content">
+      <%= yield %>
+    </div>
+
+    <footer class="footer">
+      <p>Created by <a href="http://dijonkitchen.github.io" target="_blank">Jon Chen</a>, <a href="http://yoonis.github.io" target="_blank">Eunice Do</a>, <a href="http://elizaway.github.io" target="_blank">Eliza Dunaway</a>, and <a href="http://webdevjeffus.github.io" target="_blank">Jeff George</a>.</p>
+      <p><a href="http://devbootcamp.com/" target="_blank">Dev Bootcamp NYC</a> &bull; Copperheads 2016</p>
+    </footer>
+  </div>
   </body>
 </html>
