@@ -19,6 +19,17 @@
 </head>
 <body>
 
+  <% if logged_in? %>
+    <span class='welcome'>Welcome, <%= current_user.username %>!</span>
+    <form method='post' action='/sessions'>
+      <input type='hidden' name='_method' value='DELETE' />
+      <input id='logout' type='submit' value='Logout' />
+    </form>
+  <% else %>
+    <a href='/users/new'>New User</a>
+    <a href="/sessions/new">Login</a>
+  <% end %>
+
   <% if defined?(errors) %>
     <div class='errors'>
       <ul>
