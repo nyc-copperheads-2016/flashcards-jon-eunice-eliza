@@ -11,5 +11,6 @@ get '/decks/:id/rounds/new' do
   @round = Round.create(deck_id: @deck.id, user_id: 1, first_guesses: 0, total_guesses: 0)
   @unsolved_cards = @deck.cards.shuffle
   @solved_cards = []
+  # erb :'/cards/show' # Eunice's change?
   erb :'/rounds/#{@round.id}/cards/#{@unsolved_cards.first.id}'
 end

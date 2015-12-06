@@ -1,3 +1,7 @@
 get '/' do
-  redirect "/decks"
+  if session[:user_id]
+    redirect '/decks'
+  else
+    redirect '/sessions/new'
+  end
 end
