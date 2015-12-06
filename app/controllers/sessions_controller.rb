@@ -8,8 +8,8 @@ post '/sessions' do
     session[:user_id] = user.id
     redirect '/'
   else
+    # Case: Incorrect username or password. Where to redirect???
     redirect '/?errors=incorrect_user_or_password'
-    ## Incorrect username or password
   end
 end
 
