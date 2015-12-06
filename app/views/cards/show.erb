@@ -1,9 +1,9 @@
-<div class= "container">
+<div class="container">
   <h2>Question:</h2>
-  <h3><%= @unsolved_cards.first.prompt %></h3>
-  <form method="post" action="/guesses"/>
-    <label> Write your answer here:</label>
-    <input type="text" name="answer"/>
-    <input type="submit" value="Guess"/>
-  </form>
+    <h3><%= @card.prompt %></h3>
+    <form method="post" action="/guesses"/>
+      <label> Write your answer here:</label>
+      <input type="text" name="answer"/>
+      <input type="submit" value="Guess"/>
+    </form>
 </div>
