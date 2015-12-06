@@ -7,3 +7,4 @@ post '/guesses' do
   end
   self.total_guesses += 1
 end
+
