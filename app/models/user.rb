@@ -15,7 +15,6 @@ class User < ActiveRecord::Base
 
   attr_accessor :password_confirmation
 
-  # error DOESN'T display yet!!!
   def password_confirmation_matches
     unless password_confirmation == self.password
       errors.add(:password_confirmation, "must match password")

@@ -18,6 +18,17 @@
   <title></title>
 </head>
 <body>
+
+  <% if defined?(errors) %>
+    <div class='errors'>
+      <ul>
+        <% errors.each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <%= yield %>
 </body>
 </html>
