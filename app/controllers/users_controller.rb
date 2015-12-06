@@ -1,7 +1,3 @@
-get '/users' do
-  erb :'users/login'
-end
-
 get '/users/new' do
   erb :'users/new'
 end
