@@ -27,10 +27,10 @@
 
           <% if logged_in? %>
             <li class="masthead--li">
-              <span class='welcome'>Welcome, <a href="/users/<%= current_user.id %>"><%= current_user.username %>!</a></span>
-              <form method='post' action='/sessions'>
+              <span class='welcome'>Welcome, <a href="/users/<%= current_user.id %>"><%= current_user.username %>! </a></span>
+              <form class="masthead--li" method='post' action='/sessions'>
                 <input type='hidden' name='_method' value='DELETE' />
-                <input id='logout' type='submit' value='Logout' />
+                <input class="masthead--li  log-out-btn  link" id='logout' type='submit' value='Logout' />
               </form>
             </li>
           <% else %>
