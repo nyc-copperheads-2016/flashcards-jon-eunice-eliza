@@ -12,8 +12,8 @@ deck1.cards.create(prompt: "Word programmers use when they don't want to explain
 
 deck2 = Deck.create(name: Code Jokes)
 
-deck2.cards.create(prompt: "How many programmers does it take to change a light bulb?", answer: "None, that’s a hardware problem.")
-deck2.cards.create(prompt: "What is the most used language in programming?", answer: "Profanity.")
-deck2.cards.create(prompt: "Why did the database admin leave his wife?", answer: "She had one-to-many relationships.")
-deck2.cards.create(prompt: "What did Java say to C?", answer: "You’ve got no class.")
+deck2.cards.create(prompt: "How many programmers does it take to change a light bulb?", answer: "None, that’s a hardware problem")
+deck2.cards.create(prompt: "What is the most used language in programming?", answer: "Profanity")
+deck2.cards.create(prompt: "Why did the database admin leave his wife?", answer: "She had one-to-many relationships")
+deck2.cards.create(prompt: "What did Java say to C?", answer: "You’ve got no class")
 
