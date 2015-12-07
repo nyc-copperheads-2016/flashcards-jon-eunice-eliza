@@ -100,6 +100,22 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 2.4rem;
   font-family: 'Bangers', sans-serif;
   letter-spacing: 0.03em;
+  margin-bottom: 1rem;
+}
+
+.content p {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+}
+
+.content .last-graph {
+  margin-bottom: 2rem;
+}
+
+.content h3 {
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 .content ul {
@@ -108,6 +124,27 @@ h1, h2, h3, h4, h5, h6 {
 
 .content li {
   font-size: 1.4rem;
+}
+
+.content label {
+  margin-left: 20%;
+  margin-bottom: 0.25rem;
+}
+
+.content input {
+  display: block;
+  width: 60%;
+  margin-left: 20%;
+  margin-bottom: 0.5rem;
+}
+
+.content .submit-btn {
+  width: 20%;
+  margin-left: 40%;
+}
+
+.content .deck {
+  text-align: center;
 }
 
 .content a:link,
@@ -123,6 +160,24 @@ h1, h2, h3, h4, h5, h6 {
   color: #f26101;
   font-weight: bold;
   text-decoration: none;
+}
+
+.content table {
+  width: 570px;
+  border: 1px solid #304269;
+}
+
+.table-col-1 {
+  width: 215px;
+}
+
+.table-col-2 {
+  width: 170px;
+  border-left: 1px solid #304269;
+}
+
+.table-row-data {
+  border-top: 1px solid #304269;
 }
 
 .footer {

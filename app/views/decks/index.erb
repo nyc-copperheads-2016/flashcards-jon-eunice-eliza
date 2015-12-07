@@ -1,6 +1,7 @@
 <h2>DECKS</h2>
+<h3>Click a deck to begin the game:</h3>
 <ul>
   <% @decks.each do |deck| %>
-    <a href="/decks/<%= deck.id %>/rounds/new"><li><%= deck.name %></li></a>
+    <a href="/decks/<%= deck.id %>/rounds/new"><li class="deck"><%= deck.name %></li></a>
   <% end %>
 </ul>
