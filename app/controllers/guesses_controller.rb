@@ -1,7 +1,8 @@
 post '/cards/:id/guesses' do
   @card = Card.find(params[:id])
   @round = Round.find(session[:current_round_id])
-  @round.total_guesses += 1
+  temp = @round.total_guesses + 1
+  @round.update_attributes(total_guesses: temp)
 
 
   if params[:answer].downcase == @card.answer.downcase
