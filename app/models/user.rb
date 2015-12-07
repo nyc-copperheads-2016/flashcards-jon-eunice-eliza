@@ -7,11 +7,11 @@ class User < ActiveRecord::Base
   has_many :rounds
   has_many :decks, through: :rounds
 
-  validates :username, presence: true, uniqueness: true
-  validates :email, presence: true, uniqueness: true
-  validates :password, presence: true
-  validates :password_confirmation, length: { minimum: 2 }
-  validates_confirmation_of :password, :confirm => :password_confirmation
+  # validates :username, presence: true, uniqueness: true
+  # validates :email, presence: true, uniqueness: true
+  # validates :password, presence: true
+  # validates :password_confirmation, length: { minimum: 2 }
+  # validates_confirmation_of :password, :confirm => :password_confirmation
 
   attr_accessor :password_confirmation
 
