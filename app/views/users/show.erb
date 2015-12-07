@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>UserName</h2>
+  <h2><%= current_user.username %></h2>
 
   <!-- Iterate over each kind of deck -->
   <% decks_played.each do |round_id, rounds_played| %>
