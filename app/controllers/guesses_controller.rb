@@ -10,7 +10,7 @@ post '/cards/:id/guesses' do
     remaining_cards = Guess.where(["solved = ? and round_id = ?", "false", @round.id ]).order(:id)
     # binding.pry
     if remaining_cards.length == 0
-      redirect '/rounds/#{@round.id}'
+      redirect "/rounds/#{@round.id}"
     else
       # binding.pry
 
