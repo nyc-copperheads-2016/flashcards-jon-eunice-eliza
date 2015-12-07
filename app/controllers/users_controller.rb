@@ -12,18 +12,6 @@ post '/users' do
 end
 
 get '/users/:id' do
-  rounds = current_user.rounds.all.order(:deck_id)
-  decks_played = {}
-  rounds.each do |round|
-    # Deck is already in the hash
-    if decks_played.has_key?(round.deck_id)
-      decks_played[round.deck_id] << round
-    # Deck is not in the hash
-    else
-      decks_played[round.deck_id] = []
-      decks_played[round.deck_id] << round
-    end
-  end
-  # binding.pry
-  erb :"users/show", locals: { decks_played: decks_played }
+  # Post refactoring, we have this:  (YAY)
+  erb :"users/show", locals: { decks_played: current_user.decks_played }
 end

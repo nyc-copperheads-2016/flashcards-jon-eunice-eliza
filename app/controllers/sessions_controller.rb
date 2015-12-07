@@ -1,5 +1,5 @@
 get '/sessions/new' do
-  erb :'sessions/new'
+  erb :'sessions/new', locals: { errors: params[:errors] }
 end
 
 post '/sessions' do
@@ -9,7 +9,7 @@ post '/sessions' do
     redirect '/'
   else
     # Case: Incorrect username or password. Where to redirect???
-    redirect '/?errors=incorrect_user_or_password'
+    redirect '/sessions/new?errors=incorrect_user_or_password'
   end
 end
 

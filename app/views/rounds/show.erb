@@ -5,6 +5,8 @@
 </p>
 
 <p>
+<!-- Careful.  .count is a method that will call your database.  .length() would
+avoid a db call (probably) -->
   You answered <%= @round.first_guesses %>/ <%= @round.deck.cards.count %> on the first try.
 </p>
 

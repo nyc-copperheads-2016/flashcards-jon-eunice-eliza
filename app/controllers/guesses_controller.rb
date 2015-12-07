@@ -4,8 +4,10 @@ post '/cards/:id/guesses' do
   temp = @round.total_guesses + 1
   @round.update_attributes(total_guesses: temp)
 
-
-  if params[:answer].downcase == @card.answer.downcase
+  if @card.answered_correctly?(params[:answer])
+    ## There are plenty of opportunities to enhance your learning ahead.  I
+    # challenge you to refactor this method.  Try to get it to under 10 lines of code.
+    #
     guess = @round.guesses.find_by(card_id: @card.id)
     # binding.pry
     count = @card.guesses.where(round_id: @round.id).count
