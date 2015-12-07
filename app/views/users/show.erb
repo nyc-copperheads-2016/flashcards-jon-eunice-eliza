@@ -15,10 +15,10 @@
     <!-- Iterate over each round of a particular deck -->
     <% rounds_played.each do |this_round| %>
       <tr>
-        <td><%= this_round.created_at %></td>
-        <td><%= this_round.deck.cards.count %></td>
-        <td><%= this_round.first_guesses %></td>
-        <td><%= this_round.total_guesses %></td>
+        <td class="table-format"><%= long_form_date(this_round.created_at) %></td>
+        <td class="table-format"><%= this_round.deck.cards.count %></td>
+        <td class="table-format"><%= this_round.first_guesses %></td>
+        <td class="table-format"><%= this_round.total_guesses %></td>
       </tr>
     <% end %>
 
