@@ -165,6 +165,8 @@ h1, h2, h3, h4, h5, h6 {
 .content table {
   width: 570px;
   border: 1px solid #304269;
+  background-color: #91bed4;
+  margin-bottom: 1.5rem;
 }
 
 .table-col-1 {
@@ -178,6 +180,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .table-row-data {
   border-top: 1px solid #304269;
+  background-color: #eeeefb;
 }
 
 .footer {
