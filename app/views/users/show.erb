@@ -3,24 +3,24 @@
 
   <!-- Iterate over each kind of deck -->
   <% decks_played.each do |round_id, rounds_played| %>
-    <h3>Deck Title</h3>
+    <h3><%= rounds_played[0].deck.name %></h3>
     <table>
       <tr>
         <th>Date</th>
         <th>Cards in Deck</th>
-        <th>First Guess Correct</th>
+        <th>First Guesses Correct</th>
         <th>Total Guesses</th>
       </tr>
 
-      <!-- Iterate over each round of a particular deck -->
-      <% rounds_played.each do |this_round| %>
+    <!-- Iterate over each round of a particular deck -->
+    <% rounds_played.each do |this_round| %>
       <tr>
         <td><%= this_round.created_at %></td>
-        <td><%= this_round.deck_id.cards.count %></td>
+        <td><%= this_round.deck.cards.count %></td>
         <td><%= this_round.first_guesses %></td>
         <td><%= this_round.total_guesses %></td>
       </tr>
-      <%= end %>
+    <% end %>
 
     </table>
   <% end %>
