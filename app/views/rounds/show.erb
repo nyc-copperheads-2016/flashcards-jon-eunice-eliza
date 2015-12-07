@@ -1,9 +1,7 @@
-Flashcards App
-
-<%= @round.deck_id %>
+<h2>Your score</h2>
 
 <p>
-  You've completed a round of <%= @round.deck_id %>!
+  You've completed a round of <b><i><%= @round.deck.name %></i></b>!
 </p>
 
 <p>
@@ -11,5 +9,5 @@ Flashcards App
 </p>
 
 <p>
-  You submitted <%= @round.total_guesses %> total guesses before each card was answered correctly.
+  You needed <%= @round.total_guesses %> guesses in all to answer every card correctly.
 </p>
