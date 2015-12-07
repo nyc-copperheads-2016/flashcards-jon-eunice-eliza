@@ -9,10 +9,9 @@ get '/decks/:id/rounds/new' do
   @deck = Deck.find_by(id: params[:id])
   # user_id = 1 until we have a session or user stuff
   @round = Round.create(deck_id: @deck.id, user_id: 1, first_guesses: 0, total_guesses: 0)
-
+  session[:current_round_id] = @rounds.id
   @deck.cards.each do |card|
     Guess.create(card_id: card.id, round_id: @round.id, user_id: 1)
   end
-  # erb :'/cards/show' # Eunice's change?
   redirect "/rounds/#{@round.id}/cards/first"
 end

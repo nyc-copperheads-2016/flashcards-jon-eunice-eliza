@@ -15,3 +15,7 @@ get '/rounds/:id/cards/first' do
   @card = remaining_cards.first.card
   erb :'cards/show'
 end
+
+get '/cards/:id' do
+  "Hi!"
+end

@@ -1,7 +1,11 @@
 <div class= "container">
+  <% if @last_card_was_wrong_answer %>
+    <p>The answer was...<%= @last_card_was_wrong_answer %></p>
+    <p>Now <em>you</em> type it for practice.</p>
+  <% end %>
   <h2>Question:</h2>
   <h3><%= @card.prompt %></h3>
-  <form method="post" action="/guesses"/>
+  <form method="post" action="/cards/<%= @card.id %>/guesses"/>
     <label> Write your answer here:</label>
     <input type="text" name="answer"/>
     <input type="submit" value="Guess"/>
