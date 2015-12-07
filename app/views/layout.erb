@@ -27,7 +27,7 @@
 
           <% if logged_in? %>
             <li class="masthead--li">
-              <span class='welcome'>Welcome, <%= current_user.username %>!</span>
+              <span class='welcome'>Welcome, <a href="/users/<%= current_user.id %>"><%= current_user.username %>!</a></span>
               <form method='post' action='/sessions'>
                 <input type='hidden' name='_method' value='DELETE' />
                 <input id='logout' type='submit' value='Logout' />
